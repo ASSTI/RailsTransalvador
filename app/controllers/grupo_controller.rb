@@ -17,7 +17,7 @@ class GrupoController < ApplicationController
   
     def update
       @Grupo = Grupo.find(params[:id])  
-      if @Grupo.update(Grupo_params)
+      if @Grupo.update(grupo_params)
         render json: @Grupo
       else
         render json: @Grupo.errors, status: :unprocessable_entity
@@ -25,7 +25,7 @@ class GrupoController < ApplicationController
     end  
     
     def create
-       @Grupo = Grupo.new(Grupo_params)
+       @Grupo = Grupo.new(grupo_params)
        if @Grupo.save
          render json: @Grupo, status: :created, location: @Grupo
        else
