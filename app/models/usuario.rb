@@ -39,7 +39,14 @@ class Usuario < ApplicationRecord
        resposta = { 
             valid:true,
             message: 'Usuario existe',
-            #val: valor
+            dados: {
+			        id: valor.id,
+					nome: valor.nome,
+					login: valor.login,
+					id_grupo: valor.id_grupo,
+					grupo: valor.grupo.nome
+				   }	
+					
        } 
     else
        resposta = { 
@@ -60,7 +67,13 @@ class Usuario < ApplicationRecord
        resposta = { 
           valid:true,
           message: 'Usuário autenticado',
-          #val: valor
+          dados: {
+			       id: valor.id,
+				   nome: valor.nome,
+				   login: valor.login,
+				   id_grupo: valor.id_grupo,
+				   grupo: valor.grupo.nome
+				 }	
        } 
     else
        resposta = { 
