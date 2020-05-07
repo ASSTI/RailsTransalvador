@@ -4,12 +4,15 @@ class GestaoPessoaController < ApplicationController
  
   def show
     @GestaoPessoa = GestaoPessoa.find(params[:id])
-    render json: @GestaoPessoa 
+	#fresh_when(etag: @GestaoPessoa, last_modified: @GestaoPessoa.gpe_dat_cadastro, public: true)
+	render json: @GestaoPessoa 
   end
 
   def index
     @GestaoPessoa = GestaoPessoa.all 
-    render json: @GestaoPessoa
+	#if stale?(etag:@GestaoPessoa, public: true)
+	render json: @GestaoPessoa
+	#end
   end
 
   def update
