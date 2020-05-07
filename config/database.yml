@@ -13,10 +13,10 @@ default: &default
   encoding: utf8
   username: sa
   host: dbserver #etc/hosts
-  password: 123456
+  #password: 123456
   #dbdesenv
   #host: 172.22.8.16
-  #password: 237homologacao2211
+  password: 237homologacao2211
   #host: 172.22.8.41 homologaçao
   #password: 4$$t1@2018
 
@@ -59,6 +59,6 @@ production:
   <<: *default
   database: gestao_informacao
   username: sa
-  #password: 237homologacao2211
-  password: 123456
+  password: 237homologacao2211
+  #password: 123456
   #password: 4$$t1@2018
