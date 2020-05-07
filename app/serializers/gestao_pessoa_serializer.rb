@@ -15,7 +15,7 @@ class GestaoPessoaSerializer < ActiveModel::Serializer
 
    def nascimento
       if (!object.gpe_dat_nascimento.nil?)
-        object.gpe_dat_nascimento.strftime("%Y-%m-%d")
+        object.gpe_dat_nascimento.strftime("%d/%m/%Y")
       end  
    end  
 
@@ -24,7 +24,7 @@ class GestaoPessoaSerializer < ActiveModel::Serializer
   # end  
 
   def cadastro 
-     object.gpe_dat_cadastro.strftime("%Y-%m-%d")
+     object.gpe_dat_cadastro.strftime("%d/%m/%Y")
   end  
 
 end
