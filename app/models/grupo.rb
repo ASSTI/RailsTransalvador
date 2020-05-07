@@ -6,7 +6,7 @@ class Grupo < ApplicationRecord
 
   validates :gru_id_gru, presence: false
   validates :gru_nom_grupo, presence: true
-  validates :gru_url_padrao, presence: true
+  validates :gru_url_padrao, presence: true, allow_blank:true
 
   has_many :usuario , foreign_key: "usu_id_gru"
   
