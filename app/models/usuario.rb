@@ -40,12 +40,12 @@ class Usuario < ApplicationRecord
             valid:true,
             message: 'Usuario existe',
             dados: {
-			        id: valor.id,
+			      id: valor.id,
 					nome: valor.nome,
 					login: valor.login,
 					id_grupo: valor.id_grupo,
 					grupo: valor.grupo.nome
-				   }	
+			   }	
 					
        } 
     else
@@ -64,17 +64,17 @@ class Usuario < ApplicationRecord
     valor = Usuario.where("usu_nom_login = :usu and usu_num_senha = :pwd",
     {usu: usu, pwd: pwd})
     if valor.present?
-       resposta = { 
-          valid:true,
-          message: 'Usuário autenticado',
-          dados: {
-			       id: valor.id,
-				   nome: valor.nome,
-				   login: valor.login,
-				   id_grupo: valor.id_grupo,
-				   grupo: valor.grupo.nome
-				 }	
-       } 
+      resposta = { 
+         valid:true,
+         message: 'Usuário autenticado',
+         dados: {
+			      id: valor[0].usu_id_usu,
+               nome: valor[0].usu_nom_usuario,
+				   login: valor[0].usu_nom_login,
+				   id_grupo: valor[0].usu_id_gru,
+				   grupo: valor[0].grupo.nome
+			}	
+      } 
     else
        resposta = { 
           valid:false,
